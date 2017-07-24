@@ -19,7 +19,7 @@ export default class ObserverGrid extends Component<ObserverGridProps> {
     public static propTypes = {
         ...Table.propTypes,
         header: PropTypes.object,
-        items: PropTypes.arrayOf(PropTypes.object)
+        items: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object),PropTypes.object])
     };
     public static defaultProps = {
         striped: true,
@@ -28,29 +28,29 @@ export default class ObserverGrid extends Component<ObserverGridProps> {
         hover: true
     };
     public render(): JSX.Element {
-        let {header, items, ...props} = this.props;
+        let {header, items,onRowClick, ...props} = this.props;
         return (
             <Table {...props}>
                 <thead>
                     <tr>
-                        { Objects.map(header, (item) => <th>{item}</th>) }
+                        { Objects.map(header, (item) => <th key={`th-${item}`}>{item}</th>) }
                     </tr>
                 </thead>
                 <tbody>
-                    { items.map((item, index) => this.renderItem(header, item, index)) }
+                    { items.map((item, index) => this.renderItem(header, item, index,this.props.onRowClick)) }
                 </tbody>
             </Table>
         )
     }
 
-    public renderItem(header: Map, item: IObservableValue<any>, index: number): JSX.Element {
+    public renderItem(header: Map, item: IObservableValue<any>, index: number,onRowClick:Function): JSX.Element {
         let itemResult = Objects.map(header, (headerItem, key) => {
             return (
-                <td>{item[key]}</td>
+                <td key={`td-${index}`}>{item[key]}</td>
             )
         });
         return (
-            <tr onClick={this.props.onRowClick.bind(undefined, item)}>
+            <tr key={`tr-${index}`} onClick={onRowClick.bind(undefined, item)}>
                 { itemResult}
             </tr>
         )

@@ -47,7 +47,7 @@ export default class Home extends Component<HomeProps> {
 
 
     private onRowClick = (item: any, index: number) => {
-
+        console.log(item.name,'is clicked');
     }
 
     private logout = () => {
