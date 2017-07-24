@@ -1,0 +1,16 @@
+{
+  "entries": {
+    "app": ["./app/index"],
+    "vendors": ["whatwg-fetch"]
+  },
+  "paths": {
+    "app": "src",
+    "www": "demo",
+    "assets": "assets",
+    "node_modules": "node_modules",
+    "index_template": "tools/template/index.template.ejs"
+  },
+  "aliases": {
+    "*": "./src/server"
+  }
+}

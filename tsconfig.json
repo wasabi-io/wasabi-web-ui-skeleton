@@ -1,0 +1,34 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "*": [
+        "./src/*"
+      ]
+    },
+    "target": "es2015",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "removeComments": false,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "pretty": true,
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "allowJs": false,
+    "sourceMap": true,
+    "jsx": "react"
+  },
+  "include": [
+    "typings/**/*",
+    "src/**/*"
+  ],
+  "exclude": [
+    "__test__/**/*",
+    "./build",
+    "./tools",
+    "./node_modules/**/*"
+  ]
+}
