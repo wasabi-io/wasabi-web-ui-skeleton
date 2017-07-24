@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./tools/start.js",
-    "start:dev": "webpack-dev-server --port 8080 --config tools/app/dev/webpack.js --colors",
+    "start:dev": "webpack-dev-server --port 8383 --config tools/app/dev/webpack.js --colors",
     "start:mock": "json-server --watch tools/app/dev/db.json  --port 3000 --static ./tools/app/dev/public",
     "test": "node ./tools/test.js",
     "testd": "node ./tools/testd.js",

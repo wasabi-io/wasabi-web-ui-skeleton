@@ -8,7 +8,7 @@ chai.use(chaiEnzyme()); // Note the invocation at the end
 import { polyfill }  from "es6-promise";
 polyfill();
 import "isomorphic-fetch";
-import API from "../../src/app/lib/util/API";
+import API from "../../src/lib/util/API";
 
 API.setup({
     baseUrl: "http://localhost:3889"

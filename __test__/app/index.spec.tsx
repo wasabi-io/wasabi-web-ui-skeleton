@@ -1,7 +1,7 @@
 import * as React from "react";
 import { expect } from "chai";
 import { mount } from "enzyme";
-import Component from "../../src/app/lib/component/Component";
+import Component from "../../src/lib/component/Component";
 
 describe("lang/index", () => {
     it("chai", () => {

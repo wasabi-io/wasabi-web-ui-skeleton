@@ -1,7 +1,4 @@
-let isDemo = process.env.NODE_ENV === "demo";
-let jsonConfig = isDemo ?
-    require("../webpack_demo.json"):
-    require("../webpack.json");
+let jsonConfig = require("../webpack.json");
 
 const webpack = require("webpack");
 const WebpackNotifierPlugin = require("webpack-notifier");
